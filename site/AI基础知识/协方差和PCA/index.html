@@ -14,7 +14,7 @@
     
     
       
-        <title>期望、方差、标准差、协方差、相关系数 - Notes</title>
+        <title>协方差和PCA - Notes</title>
       
     
     
@@ -85,7 +85,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              期望、方差、标准差、协方差、相关系数
+              协方差和PCA
             
           </span>
         </div>
@@ -211,23 +211,19 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          期望、方差、标准差、协方差、相关系数
+          协方差和PCA
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        期望、方差、标准差、协方差、相关系数
+        协方差和PCA
       </a>
       
         
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -237,43 +233,117 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    期望、方差、标准差、协方差、相关系数
+  </a>
+  
+    <nav class="md-nav" aria-label="期望、方差、标准差、协方差、相关系数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     期望
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     方差
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     标准差
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     协方差
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     协方差矩阵
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     相关系数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    中心化和标准化
+  </a>
+  
+    <nav class="md-nav" aria-label="中心化和标准化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    中心化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    标准化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pca" class="md-nav__link">
+    PCA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pca_1" class="md-nav__link">
+    协方差矩阵与PCA
+  </a>
+  
+    <nav class="md-nav" aria-label="协方差矩阵与PCA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    python实现
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pca_2" class="md-nav__link">
+    为什么PCA用中心化而不是标准化
   </a>
   
 </li>
@@ -375,8 +445,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -385,43 +453,117 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    期望、方差、标准差、协方差、相关系数
+  </a>
+  
+    <nav class="md-nav" aria-label="期望、方差、标准差、协方差、相关系数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     期望
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     方差
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     标准差
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     协方差
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     协方差矩阵
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     相关系数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    中心化和标准化
+  </a>
+  
+    <nav class="md-nav" aria-label="中心化和标准化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    中心化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    标准化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pca" class="md-nav__link">
+    PCA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pca_1" class="md-nav__link">
+    协方差矩阵与PCA
+  </a>
+  
+    <nav class="md-nav" aria-label="协方差矩阵与PCA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    python实现
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pca_2" class="md-nav__link">
+    为什么PCA用中心化而不是标准化
   </a>
   
 </li>
@@ -440,43 +582,45 @@
   
                 
                 
-                <h1 id="_1">期望、方差、标准差、协方差、相关系数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">期望<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+                  <h1>协方差和PCA</h1>
+                
+                <h2 id="_1">期望、方差、标准差、协方差、相关系数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">期望<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>数学期望反应随机变量平均值的大小</p>
-<h2 id="_3">方差<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_3">方差<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>衡量随机变量和其数学期望（均值）之间的偏离程度（散布度）。是一种特殊的期望。
 $$
 Var(x) = E((x-E(x))^2)
 $$</p>
-<h2 id="_4">标准差<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_4">标准差<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>方差的平方根</p>
-<h2 id="_5">协方差<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_5">协方差<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>衡量变量之间线性相关程度和变量幅度。方差是一种特殊的协方差（X=Y）。
 $$
 Cov(x,y)=E((x-E(x))(y-E(y)))
 $$
 如果协方差为正，说明X，Y同向变化，协方差越大说明同向程度越高；如果协方差为负，说明X，Y反向运动，协方差越小说明反向程度越高</p>
-<h2 id="_6">协方差矩阵<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_6">协方差矩阵<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>协方差矩阵是一个对称的矩阵，对角线是各个维度上的方差，其他地方是维度之间的协方差。值得注意的是，协方差矩阵算的是维度之间的协方差，而不是样本之间。</p>
-<h2 id="_7">相关系数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_7">相关系数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>衡量变量之间线性相关程度
 $$
 Corr(x,y) = \frac{Cov(x,y)}{\sqrt{Var(x)Var(y)}}
 $$
 相关系数也可以看成协方差：一种剔除了两个变量各自变化幅度影响的特殊协方差。</p>
 <p>相关系数的有界性：相关系数的取值范围是 [-1,1]</p>
-<h1 id="_8">中心化和标准化<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
+<h2 id="_8">中心化和标准化<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>当原始数据不同维度上的特征的尺度（单位）不一致时，需要标准化步骤对数据进行预处理，消除指标之间的量纲影响。</p>
-<h2 id="_9">中心化<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_9">中心化<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>变量减去它的均值：数据被移动到原点周围</p>
-<h2 id="_10">标准化<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_10">标准化<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>变量减去它的均值再除以标准差：数据每个维度上的尺度是一致的</p>
-<h1 id="pca">PCA<a class="headerlink" href="#pca" title="Permanent link">&para;</a></h1>
+<h2 id="pca">PCA<a class="headerlink" href="#pca" title="Permanent link">&para;</a></h2>
 <p>对原始数据进行降维，希望保留下来的维度间的相关性尽可能小，维度含有的“能量”即方差尽可能大</p>
-<h1 id="pca_1">协方差矩阵与PCA<a class="headerlink" href="#pca_1" title="Permanent link">&para;</a></h1>
+<h2 id="pca_1">协方差矩阵与PCA<a class="headerlink" href="#pca_1" title="Permanent link">&para;</a></h2>
 <p>PCA降维即让协方差矩阵中非对角线元素都基本为零。而达成这个目的需要的就是对协方差矩阵进行对角化。对角化后得到的矩阵，其对角线上是协方差矩阵的特征值，它还有两个身份：首先，它还是各个维度上的新方差；其次，它的大小代表了各个维度本身拥有的能量大小。</p>
 <p>设协方差矩阵为<span class="arithmatex">\(S\)</span>，对角化：$ S = P\Lambda P^{-1} <span class="arithmatex">\(。 选择前\)</span>N<span class="arithmatex">\(大的特征值和对应的特征向量：\)</span> \Lambda_1<span class="arithmatex">\(, <span class="arithmatex">\(P_1\)</span>。投影后的\)</span>S_1 = SP_1$</p>
-<h2 id="python">python实现<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
+<h3 id="python">python实现<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">PCA_self</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span>
