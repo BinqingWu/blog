@@ -2,4 +2,5 @@
 - 启动：make serve
 - 发布：make p
 
-- 访问：https://binqingwu.github.io/learning_notes/
+- 访问：https://binqingwu.github.io/blog/
+
