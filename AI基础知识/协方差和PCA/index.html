@@ -14,7 +14,7 @@
     
     
       
-        <title>协方差和PCA - Notes</title>
+        <title>协方差与PCA - Notes</title>
       
     
     
@@ -53,7 +53,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#pca" class="md-skip">
           Skip to content
         </a>
       
@@ -85,7 +85,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              协方差和PCA
+              协方差与PCA
             
           </span>
         </div>
@@ -211,19 +211,23 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          协方差和PCA
+          协方差与PCA
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        协方差和PCA
+        协方差与PCA
       </a>
       
         
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -315,14 +319,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pca" class="md-nav__link">
+  <a href="#pca_1" class="md-nav__link">
     PCA
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pca_1" class="md-nav__link">
+  <a href="#pca_2" class="md-nav__link">
     协方差矩阵与PCA
   </a>
   
@@ -342,7 +346,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pca_2" class="md-nav__link">
+  <a href="#pca_3" class="md-nav__link">
     为什么PCA用中心化而不是标准化
   </a>
   
@@ -445,6 +449,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -535,14 +541,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pca" class="md-nav__link">
+  <a href="#pca_1" class="md-nav__link">
     PCA
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pca_1" class="md-nav__link">
+  <a href="#pca_2" class="md-nav__link">
     协方差矩阵与PCA
   </a>
   
@@ -562,7 +568,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pca_2" class="md-nav__link">
+  <a href="#pca_3" class="md-nav__link">
     为什么PCA用中心化而不是标准化
   </a>
   
@@ -582,9 +588,8 @@
   
                 
                 
-                  <h1>协方差和PCA</h1>
-                
-                <h2 id="_1">期望、方差、标准差、协方差、相关系数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h1 id="pca">协方差与PCA<a class="headerlink" href="#pca" title="Permanent link">&para;</a></h1>
+<h2 id="_1">期望、方差、标准差、协方差、相关系数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">期望<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>数学期望反应随机变量平均值的大小</p>
 <h3 id="_3">方差<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -615,9 +620,9 @@ $$
 <p>变量减去它的均值：数据被移动到原点周围</p>
 <h3 id="_10">标准化<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>变量减去它的均值再除以标准差：数据每个维度上的尺度是一致的</p>
-<h2 id="pca">PCA<a class="headerlink" href="#pca" title="Permanent link">&para;</a></h2>
+<h2 id="pca_1">PCA<a class="headerlink" href="#pca_1" title="Permanent link">&para;</a></h2>
 <p>对原始数据进行降维，希望保留下来的维度间的相关性尽可能小，维度含有的“能量”即方差尽可能大</p>
-<h2 id="pca_1">协方差矩阵与PCA<a class="headerlink" href="#pca_1" title="Permanent link">&para;</a></h2>
+<h2 id="pca_2">协方差矩阵与PCA<a class="headerlink" href="#pca_2" title="Permanent link">&para;</a></h2>
 <p>PCA降维即让协方差矩阵中非对角线元素都基本为零。而达成这个目的需要的就是对协方差矩阵进行对角化。对角化后得到的矩阵，其对角线上是协方差矩阵的特征值，它还有两个身份：首先，它还是各个维度上的新方差；其次，它的大小代表了各个维度本身拥有的能量大小。</p>
 <p>设协方差矩阵为<span class="arithmatex">\(S\)</span>，对角化：$ S = P\Lambda P^{-1} <span class="arithmatex">\(。 选择前\)</span>N<span class="arithmatex">\(大的特征值和对应的特征向量：\)</span> \Lambda_1<span class="arithmatex">\(, <span class="arithmatex">\(P_1\)</span>。投影后的\)</span>S_1 = SP_1$</p>
 <h3 id="python">python实现<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
@@ -659,7 +664,7 @@ $$
 <span class="nb">print</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">variance_ratio</span><span class="p">)</span> <span class="c1"># 各个维度所占的方差的百分比（重要度）</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">low_dim_S</span><span class="p">)</span> <span class="c1"># （降度后的数据）</span>
 </code></pre></div>
-<h2 id="pca_2">为什么PCA用中心化而不是标准化<a class="headerlink" href="#pca_2" title="Permanent link">&para;</a></h2>
+<h2 id="pca_3">为什么PCA用中心化而不是标准化<a class="headerlink" href="#pca_3" title="Permanent link">&para;</a></h2>
 <p>因为PCA想在消除量刚影响的同时，尽量保持各个维度的“能量”（方差）。</p>
                 
                   
