@@ -1,3 +1,8 @@
+m='m'
+push:
+	git add .
+	git commit -m $m
+	git push
 serve:
 	mkdocs serve
 p: publish

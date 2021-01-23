@@ -1,0 +1,707 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.5">
+    
+    
+      
+        <title>范数与正则化 - Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
+        
+      
+    
+    
+    
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Notes" class="md-header-nav__button md-logo" aria-label="Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Notes
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              范数与正则化
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Notes" class="md-nav__button md-logo" aria-label="Notes">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        个人学习笔记
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      
+      <label class="md-nav__link" for="nav-2">
+        AI基础知识
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="AI基础知识" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          AI基础知识
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          范数与正则化
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        范数与正则化
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    向量的范数-对集合（向量）大小的度量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    矩阵的范数-对映射关系变化（矩阵）大小的度量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    范数在正则化中的应用
+  </a>
+  
+    <nav class="md-nav" aria-label="范数在正则化中的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    正则化作用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    范数与正则化
+  </a>
+  
+    <nav class="md-nav" aria-label="范数与正则化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#l0l1-0" class="md-nav__link">
+    L0范数与L1范数：-&gt; 稀疏（0越多越好）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l2-0" class="md-nav__link">
+    L2范数:-&gt; 平滑（很多接近0的值）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l1l2" class="md-nav__link">
+    L1和L2的比较
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda" class="md-nav__link">
+    \(\lambda\)超参
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    向量的范数-对集合（向量）大小的度量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    矩阵的范数-对映射关系变化（矩阵）大小的度量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    范数在正则化中的应用
+  </a>
+  
+    <nav class="md-nav" aria-label="范数在正则化中的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    正则化作用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    范数与正则化
+  </a>
+  
+    <nav class="md-nav" aria-label="范数与正则化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#l0l1-0" class="md-nav__link">
+    L0范数与L1范数：-&gt; 稀疏（0越多越好）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l2-0" class="md-nav__link">
+    L2范数:-&gt; 平滑（很多接近0的值）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l1l2" class="md-nav__link">
+    L1和L2的比较
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda" class="md-nav__link">
+    \(\lambda\)超参
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+  
+                
+                
+                <h1 id="_1">范数与正则化<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="-">向量的范数-对集合（向量）大小的度量<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<ul>
+<li>0范数：向量中非零元素的个数</li>
+<li>1范数：绝对值之和</li>
+<li>2范数：通常意义上的模</li>
+<li>p范数：
+<span class="arithmatex">\(L_p=\Vert\vec{x}\Vert_p=\sqrt[p]{\sum_{i=1}^{N}|{x_i}|^p}\)</span></li>
+<li>无穷范数：取向量的极值<ul>
+<li>正无穷：取极大</li>
+<li>负无穷：取极小</li>
+</ul>
+</li>
+</ul>
+<h2 id="-_1">矩阵的范数-对映射关系变化（矩阵）大小的度量<a class="headerlink" href="#-_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>1范数：列绝对值和最大</li>
+<li>无穷范数：行绝对值和最大</li>
+<li>2范数：<span class="arithmatex">\(A^TA\)</span>的最大特征值开平方</li>
+<li>核范数：矩阵奇异值（将矩阵svd分解）的和<ul>
+<li>SVD分解的几何意义就可以做如下的归纳：对于每一个线性映射<span class="arithmatex">\(\mathcal {T}:K^{n}\rightarrow K^{m}\)</span>, <span class="arithmatex">\(\mathcal {T}\)</span>的奇异值分解为在原空间与像空间中分别找到一组标准正交基，使得<span class="arithmatex">\(\mathcal {T}\)</span>把<span class="arithmatex">\(K^n\)</span>的第<span class="arithmatex">\(i\)</span>个基向量映射为<span class="arithmatex">\(K^m\)</span>的第<span class="arithmatex">\(i\)</span>个基向量的非负倍数，并将<span class="arithmatex">\(K^n\)</span>中余下的基向量映射为零向量。</li>
+<li>ps:特征值是方阵所有，奇异值是所有矩阵。特征值可正可负可为0，奇异值是非负的。特征值对应着到自身空间的变换，及缩放尺度，而奇异值则表示着到另一个空间的变换。</li>
+</ul>
+</li>
+<li>L0范数：矩阵的非零元素个数</li>
+<li>L1范数：矩阵中每个元素绝对值之和</li>
+<li>L2范数（F范数）：矩阵各元素平方和的平方根</li>
+<li>L21范数：矩阵先以每一列为单位，求每一列的F范数（也可认为是向量的2范数），然后再将得到的结果求L1范数（也可认为是向量的1范数），它是介于L1和L2之间的一种范数</li>
+<li>p范数：<span class="arithmatex">\(\Vert A\Vert_p=\sqrt[p]{(\sum_{i=1}^m\sum_{j=1}^n{| a_{ij}|}^p)}\)</span></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># 2范数</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="n">eig_value</span><span class="p">,</span> <span class="n">eig_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">A</span><span class="p">))</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">eig_value</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="c1"># 10.06227499652064</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># 核范数</span>
+<span class="n">u</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="c1"># A是线性变换，v是原空间的正交单位向量组合，u是像空间的正交单位向量组合，sigma是奇异值（v映射后的模长）</span>
+<span class="n">sigma</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="c1"># 10.928659376802019</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># numpy中求解范数</span>
+<span class="n">_1范数</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">_2范数</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">_无穷范数</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+<span class="n">_L2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span> <span class="o">=</span> <span class="s1">&#39;fro&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_2">范数在正则化中的应用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">正则化作用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>防止过拟合。（为什么要防止过拟合，因为我们的目标是训练一个模型使其测试误差小，能准确预测新样本，而不是训练误差小）</p>
+</li>
+<li>
+<p>约束模型特性，将先验知识融入到模型中去（稀疏、低秩、平滑等）。</p>
+</li>
+<li>
+<p>符合奥卡姆剃刀原理：在所有可能选择的模型中，我们应该选择能够很好地解释已知数据并且十分简单的模型</p>
+</li>
+</ul>
+<p>正则化函数 <span class="arithmatex">\(\Omega(w)\)</span> 有很多种选择，一般是模型复杂度的单调递增函数，模型越复杂，函数值就越大。比如，正则化项可以是模型参数向量的范数。</p>
+<h3 id="_4">范数与正则化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="l0l1-0">L0范数与L1范数：-&gt; 稀疏（0越多越好）<a class="headerlink" href="#l0l1-0" title="Permanent link">&para;</a></h4>
+<ul>
+<li>L0范数是矩阵中非0元素的个数，最小化L0范数是希望矩阵中有多的零，也就是希望矩阵稀疏。</li>
+<li>
+<p>L1范数是矩阵中各个元素绝对值之和，也能保证参数的稀疏性</p>
+<ul>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/50142573">为什么L1能保证稀疏性？</a></p>
+<ul>
+<li>
+<p>图像角度：L1正则相当于用菱形去逼近目标，所以更容易引起交点在坐标轴上即得到稀疏解</p>
+</li>
+<li>
+<p>导数角度：假设只有一个参数<span class="arithmatex">\(w\)</span>,损失函数为<span class="arithmatex">\(L(w)\)</span>,加了正则化后为<span class="arithmatex">\(J_{L 1}(w)=L(w)+\lambda|w|\)</span>。假设<span class="arithmatex">\(L(w)\)</span>在0处的导数为<span class="arithmatex">\(d_0\)</span>，引入L1正则项，在0处的导数：</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+\left.\frac{\partial J_{L 1}(w)}{\partial w}\right|_{w=0^{-}} &amp;=d_{0}-\lambda \\
+\left.\frac{\partial J_{L 1}(w)}{\partial w}\right|_{w=0^{+}} &amp;=d_{0}+\lambda
+\end{aligned}
+\]</div>
+<p>引入L1正则后，代价函数在0处的导数有一个突变，从<span class="arithmatex">\(d_{0}-\lambda\)</span>到<span class="arithmatex">\(d_{0}+\lambda\)</span>。若<span class="arithmatex">\(d_{0}-\lambda\)</span>与<span class="arithmatex">\(d_{0}+\lambda\)</span>异号，则在0处会是一个极小值点。因此，优化时，很可能优化到该极小值点上，即<span class="arithmatex">\(w\)</span>处。</p>
+<ul>
+<li>概率角度：...</li>
+<li><strong>推论</strong>：任何正则化算子，如果他在Wi=0的地方不可微，并且可以分解为一个“求和”的形式，那么这个规则化算子就可以实现稀疏。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>参数稀疏的好处：</p>
+<ul>
+<li>重要特征选择：在现实中，输入x大部分特征都与输出y没有关系或者不提供信息。在最小化目标函数时，考虑x这些额外的特征，虽然可以获得更小的训练误差，但在预测新的样本时，这些没用的信息反而会被考虑，从而干扰了对正确y的预测。而参数稀疏化就可以去掉这些无用的信息，只保留最重要的特征。</li>
+<li>可解释性更强</li>
+</ul>
+</li>
+<li>
+<p>L1范数和L0范数可以实现稀疏。但机器学习中，如果为了保证稀疏，会选择L1范数。因为L1范数是L0范数的最优凸近似(<a href="https://www.zhihu.com/question/40644990">???</a>)，而且它比L0范数更容易优化求解(L0优化NP难问题)。</p>
+</li>
+</ul>
+<h4 id="l2-0">L2范数:-&gt; 平滑（很多接近0的值）<a class="headerlink" href="#l2-0" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>L2范数是计算矩阵各元素的平方和的平方根。最小化L2范数，使得W的每个元素都很小，都接近于0，但与L1范数不同，它不会让它等于0，而是接近于0。</p>
+<ul>
+<li>为什么接近0而不等于0?<a href="">???</a></li>
+<li>优点：让优化求解变得稳定、快速、“唯一”</li>
+<li>
+<p>稳定：更容易求解得到相对well-condition的参数。</p>
+<ul>
+<li>
+<p>什么是well-condition</p>
+<ul>
+<li>假设有方程组AX=b，我们需要求解X。如果A或者b稍微的改变，会使得X的解发生很大的改变，那么这个方程组系统就是ill-condition的，反之就是well-condition的。</li>
+<li>一般我们的系数矩阵A和b是通过实验数据估计得到，所以它是存在误差的。我们希望我们的系统对这个误差是可以容忍的。但如果系统对这个误差太敏感，会造成我们的解的误差更大，那这个解就太不靠谱了。（表现在训练时候的loss上可能就是剧烈的震荡）</li>
+</ul>
+</li>
+<li>
+<p>为什么可以得到well-condition <a href="">???</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>快速：</p>
+<ul>
+<li><a href="">???</a>(https://blog.csdn.net/zouxy09/article/details/24971995)<ul>
+<li>唯一：<a href="">???</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="l1l2">L1和L2的比较<a class="headerlink" href="#l1l2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>L1: <ul>
+<li>趋向于产生少量的特征，其他的特征都是0；</li>
+<li>性能鲁棒性强；</li>
+<li>解的稳定性弱；</li>
+<li>产生多解</li>
+</ul>
+</li>
+<li>
+<p>L2: </p>
+<ul>
+<li>L2会选择更多的特征，这些特征都会接近于0；</li>
+<li>性能鲁棒性弱；</li>
+<li>解的稳定性强；</li>
+<li>产生唯一解</li>
+</ul>
+</li>
+<li>
+<p>性能鲁棒性是判断的准不准</p>
+</li>
+<li>
+<p>稳定性是判断的稳不稳</p>
+</li>
+<li>
+<p>核函数范数：-&gt;(低秩：矩阵的各行或列存在线性依赖，可以投影到更低维的线性子空间)</p>
+<ul>
+<li>核范数是rank(w)的凸近似。让这个尽可能的小，可以让求解得到的参数维度更低</li>
+<li>常用在矩阵填充（推荐系统）、鲁棒PCA(降噪、背景重建)</li>
+</ul>
+</li>
+</ul>
+<h4 id="lambda"><span class="arithmatex">\(\lambda\)</span>超参<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h4>
+<p>与正则函数在一起的通常还有<span class="arithmatex">\(\lambda\)</span>超参。它主要是平衡loss和正则项这两项的，<span class="arithmatex">\(\lambda\)</span>越大，就表示正则项要比模型训练误差更重要，也就是相比于要模型拟合我们的数据，我们更希望我们的模型能满足我们约束的<span class="arithmatex">\(\Omega(w)\)</span>的特性。反之亦然。</p>
+<p>如何定<span class="arithmatex">\(\lambda\)</span></p>
+<ul>
+<li>尝试前人经验值</li>
+<li>大概计算loss项的值是多少，<span class="arithmatex">\(\Omega(w)\)</span>的值是多少，然后针对他们的比例来确定我们的<span class="arithmatex">\(\lambda\)</span></li>
+</ul>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: 2021-01-23
+    
+  </small>
+</div>
+                  
+                
+              
+
+  
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../.." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                个人学习笔记
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../js/config.js"></script>
+      
+        <script src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.1.0/es5/tex-mml-chtml.min.js"></script>
+      
+    
+  </body>
+</html>
