@@ -721,7 +721,8 @@ $$
 <p>对原始数据进行降维，希望保留下来的维度间的相关性尽可能小，维度含有的“能量”即方差尽可能大</p>
 <h2 id="pca_2">协方差矩阵与PCA<a class="headerlink" href="#pca_2" title="Permanent link">&para;</a></h2>
 <p>PCA降维即让协方差矩阵中非对角线元素都基本为零。而达成这个目的需要的就是对协方差矩阵进行对角化。对角化后得到的矩阵，其对角线上是协方差矩阵的特征值，它还有两个身份：首先，它还是各个维度上的新方差；其次，它的大小代表了各个维度本身拥有的能量大小。</p>
-<p>设协方差矩阵为<span class="arithmatex">\(S\)</span>，对角化：$ S = P\Lambda P^{-1} <span class="arithmatex">\(。 选择前\)</span>N<span class="arithmatex">\(大的特征值和对应的特征向量：\)</span> \Lambda_1<span class="arithmatex">\(, <span class="arithmatex">\(P_1\)</span>。投影后的\)</span>S_1 = SP_1$</p>
+<p>设协方差矩阵为<span class="arithmatex">\(S\)</span>，对角化：<span class="arithmatex">\(S = P\Lambda P^{-1}\)</span>。选择前<span class="arithmatex">\(N\)</span>大的特征值和对应的特征向量：<span class="arithmatex">\(\Lambda_1\)</span>, <span class="arithmatex">\(P_1\)</span>。</p>
+<p>投影后的<span class="arithmatex">\(S_1 = SP_1\)</span></p>
 <h3 id="python">python实现<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">PCA_self</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
@@ -771,7 +772,7 @@ $$
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-01-23
+      Last update: 2021-01-30
     
   </small>
 </div>
