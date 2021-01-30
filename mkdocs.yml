@@ -20,7 +20,7 @@ theme:
 extra:
     disqus: binqingwu
 extra_javascript:
-    - js/config.js
+#s    - js/config.js
     - https://cdn.bootcdn.net/ajax/libs/mathjax/3.1.0/es5/tex-mml-chtml.min.js
 #    - http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
 markdown_extensions:
