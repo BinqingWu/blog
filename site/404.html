@@ -25,6 +25,10 @@
         
         <link rel="stylesheet" href="/assets/stylesheets/palette.75751829.min.css">
         
+          
+          
+          <meta name="theme-color" content="#000000">
+        
       
     
     
@@ -49,7 +53,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
       
   
     
@@ -143,6 +147,59 @@
       
       
         
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="/." class="md-tabs__link">
+      个人学习笔记
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8CPCA/" class="md-tabs__link">
+        AI基础知识
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/GNN/" class="md-tabs__link">
+        图神经网络
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -156,8 +213,10 @@
 
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="/." title="Binqing&#39;s Blogs" class="md-nav__button md-logo" aria-label="Binqing's Blogs">
       
@@ -358,7 +417,7 @@
       <script>
         app = initialize({
           base: "/",
-          features: [],
+          features: ['navigation.tabs', 'navigation.tabs.sticky'],
           search: Object.assign({
             worker: "/assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)

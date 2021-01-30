@@ -3,6 +3,7 @@ repo_url: https://github.com/BinqingWu
 repo_name: BinqingWu
 copyright: Binqing Wu
 site_author: Binqing Wu
+site_url: https://github.com/
 # site_description: 路边野餐
 google_analytics: ['UA-188482877-1', 'auto']
 theme:
@@ -16,10 +17,12 @@ theme:
     features:
         - navigation.tabs
         - navigation.tabs.sticky
+extra:
+    disqus: binqingwu
 extra_javascript:
     - js/config.js
     - https://cdn.bootcdn.net/ajax/libs/mathjax/3.1.0/es5/tex-mml-chtml.min.js
-#s    - http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+#    - http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
