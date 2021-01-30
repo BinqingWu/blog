@@ -1,6 +1,12 @@
-## 关于makefile
-- 启动：make serve
-- 发布：make p
+# 哈哈小吴
 
-- 访问：https://binqingwu.github.io/blog/
+## AI基础知识
+- 协方差与PCA
+- 范数与正则化
+
+## 图神经网络
+- 图神经基础知识
+
+# 访问
+https://binqingwu.github.io/blog/
 
