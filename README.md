@@ -7,3 +7,5 @@
 ## 图神经网络
 - 图神经基础知识
 
+# 访问
+https://SkrLamei.github.io/blog/
