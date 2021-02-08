@@ -1,9 +1,9 @@
-site_name: Binqing's Blog
-repo_url: https://github.com/BinqingWu
-repo_name: BinqingWu
-copyright: Binqing Wu
-site_author: Binqing Wu
-site_url: https://binqingwu.github.io/blog
+site_name: Lamei's Blog
+repo_url: https://github.com/SkrLamei
+repo_name: Lamei
+copyright: Lamei
+site_author: Lamei
+site_url: https://github.com/SkrLamei/blog
 # site_description: 路边野餐
 google_analytics: ['UA-188482877-1', 'auto']
 theme:
