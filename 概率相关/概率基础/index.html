@@ -206,6 +206,22 @@
         
   
   
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E8%A3%85%E6%9C%BA%E9%85%8D%E6%B7%B1%E5%BA%A6%E7%8E%AF%E5%A2%83/" class="md-tabs__link">
+        服务器相关
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
     
   
 
@@ -389,6 +405,50 @@
 
   
   
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      
+      <label class="md-nav__link" for="nav-4">
+        服务器相关
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="服务器相关" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          服务器相关
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E8%A3%85%E6%9C%BA%E9%85%8D%E6%B7%B1%E5%BA%A6%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        装机+配深度环境
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
     
   
   
@@ -396,14 +456,14 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
       
-      <label class="md-nav__link" for="nav-4">
+      <label class="md-nav__link" for="nav-5">
         概率相关
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="概率相关" data-md-level="1">
-        <label class="md-nav__title" for="nav-4">
+        <label class="md-nav__title" for="nav-5">
           <span class="md-nav__icon md-icon"></span>
           概率相关
         </label>
@@ -938,6 +998,7 @@
                 <h1 id="_1">概率基础<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>学习的课程：Probabilistic Systems Analysis and Applied Probability</p>
 <p>OCW原地址: http://ocw.mit.edu/6-041SCF13</p>
+<p>额外习题：《概率论与数理统计习题全解指南》.浙大版（第四版）</p>
 <h2 id="1-probability-models-and-axioms">1    Probability Models and Axioms<a class="headerlink" href="#1-probability-models-and-axioms" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Sample space <span class="arithmatex">\(\Omega\)</span></li>
@@ -948,8 +1009,7 @@
 <li>If <span class="arithmatex">\(A_1, A_2,\dots\)</span> are disjoint events (交一交为空), then: <span class="arithmatex">\(P(A_1 \cup A2 \cup \dots ) = P(A_1) + P(A_2) + \dots\)</span></li>
 </ul>
 <h2 id="2-conditioning-and-bayes-rule">2    Conditioning and Bayes' Rule<a class="headerlink" href="#2-conditioning-and-bayes-rule" title="Permanent link">&para;</a></h2>
-<p>Definition of confitional probalility:</p>
-<p>Assuming <span class="arithmatex">\(P(B) \neq 0\)</span>, <span class="arithmatex">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span></p>
+<p>Confitional probalility: Assuming <span class="arithmatex">\(P(B) \neq 0\)</span>, <span class="arithmatex">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span></p>
 <ul>
 <li>Multiplication rule: <span class="arithmatex">\(P(A \cap B) = P(B) \cdot P(A | B) = P(A) · P(B | A)\)</span></li>
 <li>Total probability theorem: <span class="arithmatex">\(P(B) = P(A)P(B|A) + P(A^c)P(B|A^c)\)</span></li>
@@ -957,17 +1017,16 @@
 </ul>
 <h2 id="3-independence">3    Independence<a class="headerlink" href="#3-independence" title="Permanent link">&para;</a></h2>
 <ul>
-<li><span class="arithmatex">\(P(B|A) = P(B)\)</span></li>
-<li>或者<span class="arithmatex">\(P(A\cap B) = P(A) \cdot P(B)\)</span></li>
+<li><span class="arithmatex">\(P(B|A) = P(B)\)</span>，或者<span class="arithmatex">\(P(A\cap B) = P(A) \cdot P(B)\)</span></li>
 <li>推论<span class="arithmatex">\(P(A_i \cap A_j \cap \dots \cap A_q) = P(A_i)P(A_j) \dots P(A_q)\)</span></li>
 </ul>
 <p>注意区分disjoint和independent：</p>
 <ul>
 <li>disjoint: 两个事件不可能同时成立，A发生B一定不发生，B发生A一定不发生</li>
-<li>independent: B事件发生与否，对A时间没影响</li>
+<li>independent: B事件发生与否，对A事件没影响</li>
 </ul>
 <p>conditioning may affect independence</p>
-<p>Pairwise independence does not imply independence：若A和B independent，若B和C independent，不能保证A、B、C三者independent</p>
+<p>Pairwise independence does not imply independence：若A和B independent，B和C independent，不能保证A、B、C三者independent</p>
 <h2 id="4-counting">4    Counting<a class="headerlink" href="#4-counting" title="Permanent link">&para;</a></h2>
 <p>Discrete uniform law：<span class="arithmatex">\(P(A) = \frac{|A|}{|\Omega|}\)</span></p>
 <ul>
@@ -987,27 +1046,47 @@
 <h2 id="5-discrete-random-variables-probability-mass-functions-expectations-variance">5    Discrete Random Variables; Probability Mass Functions; Expectations; Variance<a class="headerlink" href="#5-discrete-random-variables-probability-mass-functions-expectations-variance" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Random Variables: (Mathematically) A function from the sample space <span class="arithmatex">\(\Omega\)</span> to the real numbers</p>
+<p>Random Variables <span class="arithmatex">\(X\)</span>:  A function from the sample space <span class="arithmatex">\(\Omega\)</span> to the real numbers</p>
 </li>
 <li>
-<p>Probability mass function: </p>
+<p>Probability mass function: “probability distribution” of <span class="arithmatex">\(X\)</span></p>
 </li>
 </ul>
 <p><span class="arithmatex">\(p_X(x) = P(X=x) =P({\omega \in \Omega s.t. X(\omega) = x})\)</span></p>
-<p><span class="arithmatex">\(p_X(x) \geq 0\)</span>, <span class="arithmatex">\(\sum_xp_X(x) = 1\)</span></p>
+<p><span class="arithmatex">\(p_X(x) \geq 0\)</span>, <span class="arithmatex">\(\sum_xp_X(x) = 1\)</span> (如果加起来不为1，那就不是valid PMF了)</p>
 <ul>
 <li>Expectation:</li>
 </ul>
-<p><span class="arithmatex">\(E[X] = \sum_xxp_X(x)\)</span></p>
+<p><span class="arithmatex">\(E[X] = \sum_xxp_X(x)\)</span> Interpretations: Center of gravity of PMF</p>
 <p>Let <span class="arithmatex">\(X\)</span> be a r.v. and let <span class="arithmatex">\(Y = g(X)\)</span></p>
 <p>根据定义，<span class="arithmatex">\(E[Y] = \sum_yyp_Y(y)\)</span>, 但是计算困难。替代计算：<span class="arithmatex">\(E[Y] = \sum_xg(x)p_X(x)\)</span></p>
-<p>原来的视角站在y中，现在的视角是把y看成是x的某种映射</p>
+<p>原来的视角站在y中，现在的视角站在x中，是把y看成是x的某种映射，</p>
 <p>通常来说，<span class="arithmatex">\(E[g(X)] \neq g(E[X])\)</span>, 但是当<span class="arithmatex">\(g(.)\)</span>是linear的时候，是相等的</p>
 <ul>
 <li>Variance: <span class="arithmatex">\(var(X) = E[(X-E[X])^2] = \sum_x(x-E[x])^2p_X(x) = E[X^2] - (E[X])^2\)</span></li>
 </ul>
 <p><span class="arithmatex">\(var(\alpha X+\beta) = \alpha^2 var(X)\)</span></p>
 <h2 id="6-discrete-random-variable-examples-joint-pmfs">6    Discrete Random Variable Examples; Joint PMFs<a class="headerlink" href="#6-discrete-random-variable-examples-joint-pmfs" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Conditional PMF and expectation</li>
+</ul>
+<p>$p_{X|A}(x) = P(X=x|A) $</p>
+<p><span class="arithmatex">\(E[X|A] = \sum_xxp_{X|A}(x)\)</span></p>
+<ul>
+<li>Geometric PMF</li>
+</ul>
+<p><img alt="image-20210224111446994" src="/home/wbq/.config/Typora/typora-user-images/image-20210224111446994.png" /></p>
+<p>注意第二幅图的re-normorized， 3对上去的地方不是<span class="arithmatex">\(p(1-p)^3\)</span> 而是<span class="arithmatex">\(p\)</span>；第三幅图是第二幅图的平移结果。</p>
+<ul>
+<li>Total Expectation theorem</li>
+</ul>
+<p><img alt="image-20210224113004371" src="/home/wbq/.config/Typora/typora-user-images/image-20210224113004371.png" /></p>
+<blockquote>
+<p><span class="arithmatex">\(E[X] = P(X=1)E[X|X =1] + P(X&gt;1)E[X|X&gt;1]\)</span>,求<span class="arithmatex">\(E[X]\)</span> </p>
+</blockquote>
+<ul>
+<li>Joint PMFs</li>
+</ul>
 <h2 id="7-multiple-discrete-random-variables-expectations-conditioning-independence">7    Multiple Discrete Random Variables: Expectations, Conditioning, Independence<a class="headerlink" href="#7-multiple-discrete-random-variables-expectations-conditioning-independence" title="Permanent link">&para;</a></h2>
 <h2 id="8-continuous-random-variables">8    Continuous Random Variables<a class="headerlink" href="#8-continuous-random-variables" title="Permanent link">&para;</a></h2>
 <h2 id="9-multiple-continuous-random-variables">9    Multiple Continuous Random Variables<a class="headerlink" href="#9-multiple-continuous-random-variables" title="Permanent link">&para;</a></h2>
@@ -1035,7 +1114,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-02-23
+      Last update: 2021-02-24
     
   </small>
 </div>
