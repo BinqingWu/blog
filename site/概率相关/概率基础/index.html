@@ -212,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E8%A3%85%E6%9C%BA%E9%85%8D%E6%B7%B1%E5%BA%A6%E7%8E%AF%E5%A2%83/" class="md-tabs__link">
+      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E7%AE%A1%E7%90%86%E6%9D%83%E9%99%90/" class="md-tabs__link">
         服务器相关
       </a>
     </li>
@@ -423,6 +423,30 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E7%AE%A1%E7%90%86%E6%9D%83%E9%99%90/" class="md-nav__link">
+        管理权限
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E7%AE%A1%E7%90%86%E7%94%A8%E6%88%B7/" class="md-nav__link">
+        管理用户
+      </a>
+    </li>
+  
+
           
             
   
@@ -1013,7 +1037,7 @@
 <ul>
 <li>Multiplication rule: <span class="arithmatex">\(P(A \cap B) = P(B) \cdot P(A | B) = P(A) · P(B | A)\)</span></li>
 <li>Total probability theorem: <span class="arithmatex">\(P(B) = P(A)P(B|A) + P(A^c)P(B|A^c)\)</span></li>
-<li>Bayes rule: <span class="arithmatex">\(P(A_i | B) = \frac{P(A_i \cap B)}{P(B)} = \frac{ P(A_i) \cdot P(B|A_i) }{P(B)} = \frac{ P(A_i \cdot P(A_i | B) }{\sum_{j}P(A_j)P(B|A_j)}\)</span></li>
+<li>Bayes rule: <span class="arithmatex">\(P(A_i | B) = \frac{P(A_i \cap B)}{P(B)} = \frac{ P(A_i) \cdot P(B|A_i) }{P(B)} = \frac{ P(A_i) \cdot P(B | A_i) }{\sum_{j}P(A_j)P(B|A_j)}\)</span></li>
 </ul>
 <h2 id="3-independence">3    Independence<a class="headerlink" href="#3-independence" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1076,7 +1100,7 @@
 <li>Geometric PMF</li>
 </ul>
 <p><img alt="image-20210224111446994" src="/home/wbq/.config/Typora/typora-user-images/image-20210224111446994.png" /></p>
-<p>注意第二幅图的re-normorized， 3对上去的地方不是<span class="arithmatex">\(p(1-p)^3\)</span> 而是<span class="arithmatex">\(p\)</span>；第三幅图是第二幅图的平移结果。</p>
+<p>注意第二幅图的rescale， 3对上去的地方不是<span class="arithmatex">\(p(1-p)^3\)</span> 而是<span class="arithmatex">\(p\)</span>；第三幅图是第二幅图的平移结果。</p>
 <ul>
 <li>Total Expectation theorem</li>
 </ul>
@@ -1087,7 +1111,30 @@
 <ul>
 <li>Joint PMFs</li>
 </ul>
+<p><span class="arithmatex">\(\sum_x \sum_y p_{X,Y}(x,y) = 1\)</span></p>
+<p><span class="arithmatex">\(p_X(x) = \sum_y p_{X,Y}(x,y)\)</span>, 在<span class="arithmatex">\(X=x\)</span>的前提下，取遍所有可能的<span class="arithmatex">\(y\)</span></p>
+<p><span class="arithmatex">\(p_{X|Y}(x|y) = P(X=x|Y=y) = \frac{P_{X,Y}(x,y)}{P_Y(y)}\)</span></p>
+<p><span class="arithmatex">\(\sum_x p_{X|Y}(x|y) = 1\)</span>, <span class="arithmatex">\(Y=y\)</span> 前提下所有x都取遍，相当于rescale了PMF一下，概率总和还是1</p>
 <h2 id="7-multiple-discrete-random-variables-expectations-conditioning-independence">7    Multiple Discrete Random Variables: Expectations, Conditioning, Independence<a class="headerlink" href="#7-multiple-discrete-random-variables-expectations-conditioning-independence" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Independence</p>
+</li>
+<li>
+<p>Expectations</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(E[g(X,Y)] = \sum_x \sum_y g(x,y)p_{X,Y}(x,y)\)</span></p>
+<p>通常情况下，<span class="arithmatex">\(E[g(X,Y)] \neq g(E[X],E[Y])\)</span> ，除非<span class="arithmatex">\(g(X,Y)\)</span>是线性的，或者<span class="arithmatex">\(X,Y\)</span> 独立</p>
+<ul>
+<li>
+<p>Conditioning</p>
+</li>
+<li>
+<p>Binomial mean and variance</p>
+</li>
+</ul>
+<p><img alt="image-20210224192927216" src="/home/wbq/.config/Typora/typora-user-images/image-20210224192927216.png" /></p>
 <h2 id="8-continuous-random-variables">8    Continuous Random Variables<a class="headerlink" href="#8-continuous-random-variables" title="Permanent link">&para;</a></h2>
 <h2 id="9-multiple-continuous-random-variables">9    Multiple Continuous Random Variables<a class="headerlink" href="#9-multiple-continuous-random-variables" title="Permanent link">&para;</a></h2>
 <h2 id="10-continuous-bayes-rule-derived-distributions">10   Continuous Bayes' Rule; Derived Distributions<a class="headerlink" href="#10-continuous-bayes-rule-derived-distributions" title="Permanent link">&para;</a></h2>
@@ -1114,7 +1161,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-02-24
+      Last update: 2021-02-25
     
   </small>
 </div>
