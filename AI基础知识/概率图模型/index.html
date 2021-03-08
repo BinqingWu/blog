@@ -11,14 +11,14 @@
         <meta name="author" content="Lamei">
       
       
-        <link rel="canonical" href="https://github.com/SkrLamei/blog/%E6%A6%82%E7%8E%87%E7%9B%B8%E5%85%B3/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%9B%B8%E5%85%B3/">
+        <link rel="canonical" href="https://github.com/SkrLamei/blog/AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/">
       
       <link rel="shortcut icon" href="../../images/favicon.jpg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.5">
     
     
       
-        <title>贝叶斯相关 - Lamei's Blog</title>
+        <title>概率图模型 - Lamei's Blog</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#markov-chains" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              贝叶斯相关
+              概率图模型
             
           </span>
         </div>
@@ -174,13 +174,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8CPCA/" class="md-tabs__link">
+      <a href="../Attention/" class="md-tabs__link md-tabs__link--active">
         AI基础知识
       </a>
     </li>
@@ -214,24 +216,6 @@
     <li class="md-tabs__item">
       <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E7%AE%A1%E7%90%86%E6%9D%83%E9%99%90/" class="md-tabs__link">
         服务器相关
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-    
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../VAE/" class="md-tabs__link md-tabs__link--active">
-        概率相关
       </a>
     </li>
   
@@ -305,12 +289,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
       
       <label class="md-nav__link" for="nav-2">
         AI基础知识
@@ -329,8 +315,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8CPCA/" class="md-nav__link">
-        协方差与PCA
+      <a href="../Attention/" class="md-nav__link">
+        Attention
       </a>
     </li>
   
@@ -341,8 +327,103 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E8%8C%83%E6%95%B0%E5%92%8C%E6%AD%A3%E5%88%99%E5%8C%96/" class="md-nav__link">
+      <a href="../VAE/" class="md-nav__link">
+        VAE
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8CPCA/" class="md-nav__link">
+        协方差与PCA
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          概率图模型
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        概率图模型
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#markov-chains" class="md-nav__link">
+    Markov Chains
+  </a>
+  
+    <nav class="md-nav" aria-label="Markov Chains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    隐马尔可夫模型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%8C%83%E6%95%B0%E5%92%8C%E6%AD%A3%E5%88%99%E5%8C%96/" class="md-nav__link">
         范数与正则化
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+        贝叶斯相关
       </a>
     </li>
   
@@ -478,203 +559,6 @@
   
 
     
-      
-      
-      
-
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
-      
-      <label class="md-nav__link" for="nav-5">
-        概率相关
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="概率相关" data-md-level="1">
-        <label class="md-nav__title" for="nav-5">
-          <span class="md-nav__icon md-icon"></span>
-          概率相关
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../VAE/" class="md-nav__link">
-        VAE
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
-        概率图模型
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E6%A6%82%E7%8E%87%E5%9F%BA%E7%A1%80/" class="md-nav__link">
-        概率基础
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          贝叶斯相关
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        贝叶斯相关
-      </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    极大似然估计
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nb" class="md-nav__link">
-    NB
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    贝叶斯网络
-  </a>
-  
-    <nav class="md-nav" aria-label="贝叶斯网络">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    有效表达了属性间的条件独立性
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    分析条件独立性的方法
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mdl" class="md-nav__link">
-    MDL准则确定贝叶斯网
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    贝叶斯网的推断
-  </a>
-  
-    <nav class="md-nav" aria-label="贝叶斯网的推断">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    吉布斯采样
-  </a>
-  
-    <nav class="md-nav" aria-label="吉布斯采样">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    基于吉布斯采样的近似推断
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#em" class="md-nav__link">
-    EM算法
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -698,90 +582,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#markov-chains" class="md-nav__link">
+    Markov Chains
+  </a>
+  
+    <nav class="md-nav" aria-label="Markov Chains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    极大似然估计
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nb" class="md-nav__link">
-    NB
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    贝叶斯网络
-  </a>
-  
-    <nav class="md-nav" aria-label="贝叶斯网络">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    有效表达了属性间的条件独立性
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    分析条件独立性的方法
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mdl" class="md-nav__link">
-    MDL准则确定贝叶斯网
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    贝叶斯网的推断
-  </a>
-  
-    <nav class="md-nav" aria-label="贝叶斯网的推断">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    吉布斯采样
-  </a>
-  
-    <nav class="md-nav" aria-label="吉布斯采样">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    基于吉布斯采样的近似推断
+    隐马尔可夫模型
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#em" class="md-nav__link">
-    EM算法
-  </a>
   
 </li>
       
@@ -798,53 +614,20 @@
               
   
                 
-                  <a href="https://github.com/SkrLamei/edit/master/docs/概率相关/贝叶斯相关.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/SkrLamei/edit/master/docs/AI基础知识/概率图模型.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>贝叶斯相关</h1>
+                  <h1>概率图模型</h1>
                 
-                <h2 id="_1">极大似然估计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>https://zhuanlan.zhihu.com/p/36331115</p>
-<p>例题： 试使用极大似然法估算西瓜数据集 3.0 中前 3 个属性的类条件概率.（机器学习周志华7.1）</p>
-<p><img alt="image-20210305133027897" src="../../images/image-20210305133027897.png" /> </p>
-<p>类条件概率: <span class="arithmatex">\(P(x|c)\)</span></p>
-<p>以色泽为例，关于色泽的类条件概率：</p>
-<p>$ p_{乌黑|是}=p_{1}$, $ p_{浅白|是}=p_{2}$ , <span class="arithmatex">\(p_{青绿|是}=p_{3}\)</span> </p>
-<p>似然为：<span class="arithmatex">\(L(p_{色泽，是}) = P(X_{色泽}|C=是) =\prod_{x\in D_{是}}P(x) = p_{1}^{4}p_{2}^{1}p_3^{3}\)</span></p>
-<p>其对数似然为：$ LL(p_{色泽，是})=4ln(p_1)+ln(p_2)+3ln(p_3) $ </p>
-<p>求极大似然，则分别对 $ p_1,p_2,p_3$ 求偏导并使其为零，注意：<span class="arithmatex">\(p_1+p_2+p_3 = 1\)</span></p>
-<p>可求得： <span class="arithmatex">\(p_1,p_2,p_3\)</span> 的极大似然估计： $ \hat{p_1}=\frac{1}{2},\hat{p_2}=\frac{1}{8} $, $\hat p_{3}=\frac{3}{8} $</p>
-<p>同理可得  $ P(X_{色泽}|Y=否) $ 的似然概率，进而求得类为“否”时各取值条件概率的极大似然估计。</p>
-<p>值得注意的是，这边的<span class="arithmatex">\(p_1,p_2,p_3 \dots\)</span>就是<span class="arithmatex">\(\theta_c\)</span>的参数值</p>
-<blockquote>
-<p>离散值时直接计算各类别的条件概率； 连续值时，是均值和方差，书上的例子就是连续的</p>
-</blockquote>
-<h2 id="nb">NB<a class="headerlink" href="#nb" title="Permanent link">&para;</a></h2>
-<p>朴素</p>
-<p><img alt="image-20210305151752792" src="../../images/image-20210305151752792.png" /></p>
-<p>半朴素：考虑一部分依赖，独依赖：假设每个属性在类别之外最多依赖于一个其他属性，是比较常用的做法。</p>
-<p>拉普拉斯修正：避免其他属性携带的信息被训练集中未出现的属性值”抹去“</p>
-<h2 id="_2">贝叶斯网络<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">有效表达了属性间的条件独立性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20210305152441115" src="../../images/image-20210305152441115.png" /></p>
-<p><img alt="image-20210305161044268" src="../../images/image-20210305161044268.png" /></p>
-<h3 id="_4">分析条件独立性的方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>D-separation ：http://web.mit.edu/jmn/www/6.034/d-separation.pdf</p>
-<h3 id="mdl">MDL准则确定贝叶斯网<a class="headerlink" href="#mdl" title="Permanent link">&para;</a></h3>
-<p>若网络结构己知，即属性间的依赖关系己知，则贝叶斯网的学习过程相对简单，只需通过对训练样本"计数"，估计出每个结点的条件概率表即可。但在现实应用中我们往往并不知晓网络结构。于是，贝叶斯网学习的首要任务就是根据训练数据集来找出结构最"恰当"的贝叶斯网"评分搜索"是求解这一问题的常用办法.</p>
-<p>最小化<span class="arithmatex">\(s(B|D)\)</span> 等价于对参数<span class="arithmatex">\(\Theta\)</span>的极大似然估计。</p>
-<h3 id="_5">贝叶斯网的推断<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<h4 id="_6">吉布斯采样<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<p>https://www.youtube.com/watch?v=ER3DDBFzH2g</p>
-<p><img alt="image-20210305173951536" src="../../images/image-20210305173951536.png" /></p>
-<p>用条件分布拟合联合分布，多次迭代后（比如T次），最后一次的值就是拟合的结果</p>
-<h5 id="_7">基于吉布斯采样的近似推断<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
-<p>https://longaspire.github.io/blog/静态贝叶斯网络/#5-贝叶斯网络的推断</p>
-<p><img alt="image-20210305174927683" src="../../images/image-20210305174927683.png" /></p>
-<h2 id="em">EM算法<a class="headerlink" href="#em" title="Permanent link">&para;</a></h2>
-<p>https://zhuanlan.zhihu.com/p/36331115</p>
+                <h2 id="markov-chains">Markov Chains<a class="headerlink" href="#markov-chains" title="Permanent link">&para;</a></h2>
+<p>马尔科夫链（Markov Chain）https://zhuanlan.zhihu.com/p/274775796?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=724740035856859136</p>
+<p>Chapman-Kolmogorov Equation https://blog.csdn.net/baimafujinji/article/details/6469597</p>
+<p>http://episte.math.ntu.edu.tw/articles/mm/mm_09_3_08/index.html</p>
+<h3 id="_1">隐马尔可夫模型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>https://zhuanlan.zhihu.com/p/85454896</p>
+<p>https://zhuanlan.zhihu.com/p/87632700</p>
                 
                   
                     
@@ -853,7 +636,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-03-05
+      Last update: 2021-03-08
     
   </small>
 </div>
@@ -871,7 +654,7 @@
 
   <h2 id="__comments">Comments</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://github.com/SkrLamei/blog/%E6%A6%82%E7%8E%87%E7%9B%B8%E5%85%B3/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%9B%B8%E5%85%B3/",this.page.identifier="/%E6%A6%82%E7%8E%87%E7%9B%B8%E5%85%B3/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%9B%B8%E5%85%B3/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//binqingwu.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+  <script>var disqus_config=function(){this.page.url="https://github.com/SkrLamei/blog/AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/",this.page.identifier="/AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//binqingwu.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
 
               
             </article>
@@ -885,7 +668,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../%E6%A6%82%E7%8E%87%E5%9F%BA%E7%A1%80/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8CPCA/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -894,11 +677,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                概率基础
+                协方差与PCA
               </div>
             </div>
           </a>
         
+        
+          <a href="../%E8%8C%83%E6%95%B0%E5%92%8C%E6%AD%A3%E5%88%99%E5%8C%96/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                范数与正则化
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>

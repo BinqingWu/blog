@@ -11,14 +11,14 @@
         <meta name="author" content="Lamei">
       
       
-        <link rel="canonical" href="https://github.com/SkrLamei/blog/%E6%A6%82%E7%8E%87%E7%9B%B8%E5%85%B3/%E6%A6%82%E7%8E%87%E5%9F%BA%E7%A1%80/">
+        <link rel="canonical" href="https://github.com/SkrLamei/blog/AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/VAE/">
       
       <link rel="shortcut icon" href="../../images/favicon.jpg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.5">
     
     
       
-        <title>概率基础 - Lamei's Blog</title>
+        <title>VAE - Lamei's Blog</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#vae" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              概率基础
+              VAE
             
           </span>
         </div>
@@ -174,13 +174,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8CPCA/" class="md-tabs__link">
+      <a href="../Attention/" class="md-tabs__link md-tabs__link--active">
         AI基础知识
       </a>
     </li>
@@ -214,24 +216,6 @@
     <li class="md-tabs__item">
       <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E7%AE%A1%E7%90%86%E6%9D%83%E9%99%90/" class="md-tabs__link">
         服务器相关
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-    
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../VAE/" class="md-tabs__link md-tabs__link--active">
-        概率相关
       </a>
     </li>
   
@@ -305,12 +289,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
       
       <label class="md-nav__link" for="nav-2">
         AI基础知识
@@ -329,7 +315,110 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8CPCA/" class="md-nav__link">
+      <a href="../Attention/" class="md-nav__link">
+        Attention
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          VAE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        VAE
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pzx" class="md-nav__link">
+    为什么要给每个样本构造专属的正态分布\(p(Z|X)\)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pzx_1" class="md-nav__link">
+    为什么\(p(Z|X)\)要是标准正态的
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kl" class="md-nav__link">
+    为什么要用ＫＬ散度不用其他散度
+  </a>
+  
+    <nav class="md-nav" aria-label="为什么要用ＫＬ散度不用其他散度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    采样计算vs数值计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kl_1" class="md-nav__link">
+    KL散度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    重参数是啥，为什么要重参数
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8CPCA/" class="md-nav__link">
         协方差与PCA
       </a>
     </li>
@@ -341,8 +430,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E8%8C%83%E6%95%B0%E5%92%8C%E6%AD%A3%E5%88%99%E5%8C%96/" class="md-nav__link">
+      <a href="../%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        概率图模型
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%8C%83%E6%95%B0%E5%92%8C%E6%AD%A3%E5%88%99%E5%8C%96/" class="md-nav__link">
         范数与正则化
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+        贝叶斯相关
       </a>
     </li>
   
@@ -478,154 +591,6 @@
   
 
     
-      
-      
-      
-
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
-      
-      <label class="md-nav__link" for="nav-5">
-        概率相关
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="概率相关" data-md-level="1">
-        <label class="md-nav__title" for="nav-5">
-          <span class="md-nav__icon md-icon"></span>
-          概率相关
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../VAE/" class="md-nav__link">
-        VAE
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
-        概率图模型
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          概率基础
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        概率基础
-      </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#bernoulli-distribution" class="md-nav__link">
-    Bernoulli distribution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#binomial-distribution" class="md-nav__link">
-    Binomial distribution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#geometric-distribution" class="md-nav__link">
-    Geometric distribution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#poisson-distribution" class="md-nav__link">
-    Poisson distribution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#markov-chains" class="md-nav__link">
-    Markov Chains
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%9B%B8%E5%85%B3/" class="md-nav__link">
-        贝叶斯相关
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -651,36 +616,49 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bernoulli-distribution" class="md-nav__link">
-    Bernoulli distribution
+  <a href="#pzx" class="md-nav__link">
+    为什么要给每个样本构造专属的正态分布\(p(Z|X)\)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#binomial-distribution" class="md-nav__link">
-    Binomial distribution
+  <a href="#pzx_1" class="md-nav__link">
+    为什么\(p(Z|X)\)要是标准正态的
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#geometric-distribution" class="md-nav__link">
-    Geometric distribution
+  <a href="#kl" class="md-nav__link">
+    为什么要用ＫＬ散度不用其他散度
   </a>
+  
+    <nav class="md-nav" aria-label="为什么要用ＫＬ散度不用其他散度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    采样计算vs数值计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kl_1" class="md-nav__link">
+    KL散度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#poisson-distribution" class="md-nav__link">
-    Poisson distribution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#markov-chains" class="md-nav__link">
-    Markov Chains
+  <a href="#_1" class="md-nav__link">
+    重参数是啥，为什么要重参数
   </a>
   
 </li>
@@ -698,41 +676,44 @@
               
   
                 
-                  <a href="https://github.com/SkrLamei/edit/master/docs/概率相关/概率基础.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/SkrLamei/edit/master/docs/AI基础知识/VAE.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="_1">概率基础<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>学习的课程：Probabilistic Systems Analysis and Applied Probability</p>
-<p>OCW原地址: http://ocw.mit.edu/6-041SCF13</p>
-<p>额外习题：《概率论与数理统计习题全解指南》.浙大版（第四版）</p>
-<h2 id="bernoulli-distribution">Bernoulli distribution<a class="headerlink" href="#bernoulli-distribution" title="Permanent link">&para;</a></h2>
-<p>0-1分布，单次为1的概率是<span class="arithmatex">\(p\)</span></p>
-<p>概率质量函数：<span class="arithmatex">\(P_X(x)=p^{x}(1-p)^{1-x}=\left\{{\begin{matrix}p&amp;{\mbox{if }}x=1,\\1-p\ &amp;{\mbox{if }}x=0.\\\end{matrix}}\right.\)</span></p>
-<p>期望：<span class="arithmatex">\(\operatorname {E} [X]=\sum _{i=0}^{1}x_{i}f_{X}(x)=0+p=p\)</span></p>
-<p>方差：<span class="arithmatex">\(\operatorname {var} [X]=\sum _{i=0}^{1}(x_{i}-E[X])^{2}f_{X}(x)=(0-p)^{2}(1-p)+(1-p)^{2}p=p(1-p)\)</span></p>
-<h2 id="binomial-distribution">Binomial distribution<a class="headerlink" href="#binomial-distribution" title="Permanent link">&para;</a></h2>
-<p>单次成功概率为<span class="arithmatex">\(p\)</span>, <span class="arithmatex">\(n\)</span>次试验中正好得到<span class="arithmatex">\(k\)</span>次成功的概率</p>
-<p>概率质量函数：<span class="arithmatex">\(P_X(k) = {n \choose k}p^{k}(1-p)^{n-k}, k = 0,1,2, \dots ,n\)</span></p>
-<p>期望：<span class="arithmatex">\(E[X] = np\)</span></p>
-<p>方差：<span class="arithmatex">\(var(X) = np(1-p)\)</span></p>
-<p>累积分布函数：<span class="arithmatex">\(P(X\leq k)=\sum _{i=0}^{\lfloor k\rfloor }{n \choose i}p^{i}(1-p)^{n-i}\)</span></p>
-<p>任何二项分布B(<em>n</em>,<em>p</em>)都是*n*次独立伯努利试验的和。伯努利分布是二项分布在*n* = 1时的特殊情况。</p>
-<h2 id="geometric-distribution">Geometric distribution<a class="headerlink" href="#geometric-distribution" title="Permanent link">&para;</a></h2>
-<p>指的是以下两种离散型概率分布中的一种：</p>
+                <h1 id="vae">VAE<a class="headerlink" href="#vae" title="Permanent link">&para;</a></h1>
+<p>通俗理解VAE：</p>
+<p>https://kexue.fm/archives/7725</p>
+<h2 id="pzx">为什么要给每个样本构造专属的正态分布<span class="arithmatex">\(p(Z|X)\)</span><a class="headerlink" href="#pzx" title="Permanent link">&para;</a></h2>
+<p>为了能够把从分布<span class="arithmatex">\(p(Z|X_k)\)</span>采样出来的一个<span class="arithmatex">\(Z_k\)</span>还原为<span class="arithmatex">\(X_k\)</span>时，能对应的上。</p>
+<h2 id="pzx_1">为什么<span class="arithmatex">\(p(Z|X)\)</span>要是标准正态的<a class="headerlink" href="#pzx_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>在伯努利试验中，得到一次成功所需要的试验次数X。X的值域是{ 1, 2, 3, ... }</li>
-<li>在得到第一次成功之前所经历的失败次数Y = X − 1。Y的值域是{ 0, 1, 2, 3, ... }</li>
+<li>简单，实践方便，处处不为0.</li>
+<li>为了保证有生成能力，需要有一定的噪声。所以需要设计方差为1。</li>
+<li>希望同一类样本encoder出来越接近。所以需要均值为0.</li>
 </ul>
-<p><a href="https://zh.wikipedia.org/zh-hans/幾何分布">https://zh.wikipedia.org/zh-hans/%E5%B9%BE%E4%BD%95%E5%88%86%E5%B8%83</a></p>
-<h2 id="poisson-distribution">Poisson distribution<a class="headerlink" href="#poisson-distribution" title="Permanent link">&para;</a></h2>
-<p>http://episte.math.ntu.edu.tw/articles/sm/sm_16_07_1/index.html</p>
-<p><span class="arithmatex">\(\lambda\)</span>是时间<span class="arithmatex">\(t\)</span>内事件发生的期望（实际状况中可能用平均值替代）</p>
-<h2 id="markov-chains">Markov Chains<a class="headerlink" href="#markov-chains" title="Permanent link">&para;</a></h2>
-<p>马尔科夫链（Markov Chain）https://zhuanlan.zhihu.com/p/274775796?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=724740035856859136</p>
-<p>Chapman-Kolmogorov Equation https://blog.csdn.net/baimafujinji/article/details/6469597</p>
-<p>http://episte.math.ntu.edu.tw/articles/mm/mm_09_3_08/index.html</p>
+<p>KL loss就是去约束这个的</p>
+<p>https://kexue.fm/archives/5343</p>
+<h2 id="kl">为什么要用ＫＬ散度不用其他散度<a class="headerlink" href="#kl" title="Permanent link">&para;</a></h2>
+<h3 id="vs">采样计算vs数值计算<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h3>
+<p>期望：</p>
+<p><span class="arithmatex">\(\mathbb{E}[x] = \int x p(x)dx\tag{1}\)</span></p>
+<p>数值计算：</p>
+<p><span class="arithmatex">\(\mathbb{E}[x] \approx \sum_{i=1}^n x_i p(x_i) \left(x_i - x_{i-1}\right)\tag{2}\)</span></p>
+<p>采样计算：</p>
+<p><span class="arithmatex">\(\mathbb{E}[x] \approx \frac{1}{n}\sum_{i=1}^n x_i,\quad x_i \sim p(x)\tag{3}\)</span></p>
+<p>在采样计算中，<span class="arithmatex">\(x_i\)</span>是从<span class="arithmatex">\(p(x)\)</span>中依概率采样出来的，概率大的<span class="arithmatex">\(x_i\)</span>出现的次数也多，所以可以说采样的结果已经包含了<span class="arithmatex">\(p(x)\)</span>在里边，就不用再乘以<span class="arithmatex">\(p(x_i)\)</span>了。</p>
+<h3 id="kl_1">KL散度<a class="headerlink" href="#kl_1" title="Permanent link">&para;</a></h3>
+<p>KL散度主要用来度量两个概率分布<span class="arithmatex">\(p(x)\)</span>和<span class="arithmatex">\(q(x)\)</span>之间的差异</p>
+<p><span class="arithmatex">\(KL\Big(p(x)\Big\Vert q(x)\Big) = \int p(x)\ln \frac{p(x)}{q(x)} dx=\mathbb{E}_{x\sim p(x)}\left[\ln \frac{p(x)}{q(x)}\right]\tag{5}\)</span></p>
+<p>KL散度可以写成期望的形式，这允许我们对其进行采样计算，这使得在实践的过程中可行性比较高。</p>
+<p><span class="arithmatex">\(\mathbb{E}_{x\sim p(x)}[f(x)] = \int f(x)p(x)dx \approx \frac{1}{n}\sum_{i=1}^n f(x_i),\quad x_i\sim p(x)\tag{4}\)</span></p>
+<p>KL散度也不是没有缺点，当<span class="arithmatex">\(q(x)\)</span>在某个区域等于0，而<span class="arithmatex">\(p(x)\)</span>在该区域不等于0，那么KL散度就出现无穷大。这是KL散度的固有问题。用正态分布能规避这个问题，是因为它处处不为0。</p>
+<p>最小化KL散度的结果都是两者尽可能相等。这一点的严格证明要用到变分法，而事实上VAE中的V（变分）就是因为VAE的推导就是因为用到了KL散度（进而也包含了变分法）。</p>
+<p>https://kexue.fm/archives/5253</p>
+<h2 id="_1">重参数是啥，为什么要重参数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Encoder计算出 <span class="arithmatex">\(\mu\)</span> 和方差<span class="arithmatex">\(\sigma^2\)</span> 之后, 不是直接在这个分布上采样, 而是在另外的一个标准正态分布上采样之后, 乘以<span class="arithmatex">\(\sigma\)</span>  (scale)再加上 <span class="arithmatex">\(\mu\)</span> (shift). 通过这种方法, 就把不可bp的操作转移到了梯度回传路径外面.</p>
+<p>https://zhuanlan.zhihu.com/p/50633055</p>
                 
                   
                     
@@ -741,7 +722,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-03-05
+      Last update: 2021-03-08
     
   </small>
 </div>
@@ -759,7 +740,7 @@
 
   <h2 id="__comments">Comments</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://github.com/SkrLamei/blog/%E6%A6%82%E7%8E%87%E7%9B%B8%E5%85%B3/%E6%A6%82%E7%8E%87%E5%9F%BA%E7%A1%80/",this.page.identifier="/%E6%A6%82%E7%8E%87%E7%9B%B8%E5%85%B3/%E6%A6%82%E7%8E%87%E5%9F%BA%E7%A1%80/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//binqingwu.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+  <script>var disqus_config=function(){this.page.url="https://github.com/SkrLamei/blog/AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/VAE/",this.page.identifier="/AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/VAE/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//binqingwu.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
 
               
             </article>
@@ -773,7 +754,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Attention/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -782,19 +763,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                概率图模型
+                Attention
               </div>
             </div>
           </a>
         
         
-          <a href="../%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%9B%B8%E5%85%B3/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8CPCA/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                贝叶斯相关
+                协方差与PCA
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
