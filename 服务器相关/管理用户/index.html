@@ -206,22 +206,6 @@
         
   
   
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/GNN/" class="md-tabs__link">
-        图神经网络
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
     
   
 
@@ -331,6 +315,30 @@
     <li class="md-nav__item">
       <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Attention/" class="md-nav__link">
         Attention
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/GNN/" class="md-nav__link">
+        图神经基础知识
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/NRI/" class="md-nav__link">
+        NRI
       </a>
     </li>
   
@@ -465,62 +473,6 @@
 
   
   
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
-      
-      <label class="md-nav__link" for="nav-4">
-        图神经网络
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="图神经网络" data-md-level="1">
-        <label class="md-nav__title" for="nav-4">
-          <span class="md-nav__icon md-icon"></span>
-          图神经网络
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/GNN/" class="md-nav__link">
-        图神经基础知识
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/NRI/" class="md-nav__link">
-        NRI
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-
-  
-  
     
   
   
@@ -528,14 +480,14 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
       
-      <label class="md-nav__link" for="nav-5">
+      <label class="md-nav__link" for="nav-4">
         服务器相关
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="服务器相关" data-md-level="1">
-        <label class="md-nav__title" for="nav-5">
+        <label class="md-nav__title" for="nav-4">
           <span class="md-nav__icon md-icon"></span>
           服务器相关
         </label>
@@ -611,6 +563,20 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     删除用户
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    修改用户密码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    查看用户
   </a>
   
 </li>
@@ -715,6 +681,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    修改用户密码
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    查看用户
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -743,6 +723,12 @@ sudo adduser username
 # -f 强制删除
 sudo userdel -r -f postfix
 </code></pre></div>
+<h2 id="_4">修改用户密码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>sudo passwd username
+</code></pre></div>
+<h2 id="_5">查看用户<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>cat /etc/passwd
+</code></pre></div>
                 
                   
                     
@@ -751,7 +737,7 @@ sudo userdel -r -f postfix
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-02-24
+      Last update: 2021-05-19
     
   </small>
 </div>
