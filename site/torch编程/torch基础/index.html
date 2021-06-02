@@ -11,14 +11,14 @@
         <meta name="author" content="Lamei">
       
       
-        <link rel="canonical" href="https://github.com/SkrLamei/blog/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E7%AE%A1%E7%90%86%E6%9D%83%E9%99%90/">
+        <link rel="canonical" href="https://github.com/SkrLamei/blog/torch%E7%BC%96%E7%A8%8B/torch%E5%9F%BA%E7%A1%80/">
       
       <link rel="shortcut icon" href="../../images/favicon.jpg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.5">
     
     
       
-        <title>管理权限 - Lamei's Blog</title>
+        <title>Torch基础 - Lamei's Blog</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#tensor" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              管理权限
+              Torch基础
             
           </span>
         </div>
@@ -190,13 +190,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../torch%E7%BC%96%E7%A8%8B/topk/" class="md-tabs__link">
+      <a href="../topk/" class="md-tabs__link md-tabs__link--active">
         Torch编程
       </a>
     </li>
@@ -222,15 +224,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../gdm/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/gdm/" class="md-tabs__link">
         服务器相关
       </a>
     </li>
@@ -433,12 +433,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
       
       <label class="md-nav__link" for="nav-3">
         Torch编程
@@ -457,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../torch%E7%BC%96%E7%A8%8B/topk/" class="md-nav__link">
+      <a href="../topk/" class="md-nav__link">
         Top k
       </a>
     </li>
@@ -467,11 +469,52 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../torch%E7%BC%96%E7%A8%8B/torch%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Torch基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Torch基础
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tensor" class="md-nav__link">
+    Tensor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    运算
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -545,14 +588,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
       
       <label class="md-nav__link" for="nav-5">
         服务器相关
@@ -571,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gdm/" class="md-nav__link">
+      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/gdm/" class="md-nav__link">
         GNOME Display Manager
       </a>
     </li>
@@ -581,49 +622,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          管理权限
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E7%AE%A1%E7%90%86%E6%9D%83%E9%99%90/" class="md-nav__link">
         管理权限
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    改文件用户名用户组
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -633,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E7%AE%A1%E7%90%86%E7%94%A8%E6%88%B7/" class="md-nav__link">
+      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E7%AE%A1%E7%90%86%E7%94%A8%E6%88%B7/" class="md-nav__link">
         管理用户
       </a>
     </li>
@@ -645,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E7%B3%BB%E7%BB%9Flog/" class="md-nav__link">
+      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E7%B3%BB%E7%BB%9Flog/" class="md-nav__link">
         系统log
       </a>
     </li>
@@ -657,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E8%A3%85%E6%9C%BAUbuntu%2016.04%2B%E9%85%8D%E6%B7%B1%E5%BA%A6%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E8%A3%85%E6%9C%BAUbuntu%2016.04%2B%E9%85%8D%E6%B7%B1%E5%BA%A6%E7%8E%AF%E5%A2%83/" class="md-nav__link">
         装机Ubuntu 16.04+配深度环境
       </a>
     </li>
@@ -669,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E8%A3%85%E6%9C%BAUbuntu%2018.04%2B%E9%85%8D%E6%B7%B1%E5%BA%A6%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E8%A3%85%E6%9C%BAUbuntu%2018.04%2B%E9%85%8D%E6%B7%B1%E5%BA%A6%E7%8E%AF%E5%A2%83/" class="md-nav__link">
         装机Ubuntu 18.04+配深度环境
       </a>
     </li>
@@ -681,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8root%E7%94%A8%E6%88%B7/" class="md-nav__link">
+      <a href="../../%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8root%E7%94%A8%E6%88%B7/" class="md-nav__link">
         远程登陆无法使用root用户
       </a>
     </li>
@@ -709,8 +712,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -719,8 +720,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    改文件用户名用户组
+  <a href="#tensor" class="md-nav__link">
+    Tensor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    运算
   </a>
   
 </li>
@@ -738,18 +746,23 @@
               
   
                 
-                  <a href="https://github.com/SkrLamei/edit/master/docs/服务器相关/管理权限.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/SkrLamei/edit/master/docs/torch编程/torch基础.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="_1">管理权限<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">改文件用户名用户组<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>sudo chown -R 用户名:用户组 文件名/</p>
-<p>-R:递归地去改</p>
-<p>比如：sudo chown -R www:wwwgroup www_data/</p>
-<div class="highlight"><pre><span></span><code>sudo chown -R wd:wd /data/wd
-</code></pre></div>
+                  <h1>Torch基础</h1>
+                
+                <h2 id="tensor">Tensor<a class="headerlink" href="#tensor" title="Permanent link">&para;</a></h2>
+<ul>
+<li>permute</li>
+</ul>
+<h2 id="_1">运算<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>乘法</li>
+<li>torch.einsum</li>
+<li>torch.matmul</li>
+</ul>
                 
                   
                     
@@ -758,7 +771,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-05-17
+      Last update: 2021-05-28
     
   </small>
 </div>
@@ -776,7 +789,7 @@
 
   <h2 id="__comments">Comments</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://github.com/SkrLamei/blog/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E7%AE%A1%E7%90%86%E6%9D%83%E9%99%90/",this.page.identifier="/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9B%B8%E5%85%B3/%E7%AE%A1%E7%90%86%E6%9D%83%E9%99%90/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//binqingwu.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+  <script>var disqus_config=function(){this.page.url="https://github.com/SkrLamei/blog/torch%E7%BC%96%E7%A8%8B/torch%E5%9F%BA%E7%A1%80/",this.page.identifier="/torch%E7%BC%96%E7%A8%8B/torch%E5%9F%BA%E7%A1%80/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//binqingwu.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
 
               
             </article>
@@ -790,7 +803,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../gdm/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../topk/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -799,19 +812,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                GNOME Display Manager
+                Top k
               </div>
             </div>
           </a>
         
         
-          <a href="../%E7%AE%A1%E7%90%86%E7%94%A8%E6%88%B7/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../%E4%BA%BA%E7%94%9F%E7%BB%8F%E9%AA%8C/%E6%80%8E%E4%B9%88%E9%97%AE%E9%97%AE%E9%A2%98or%E5%AF%BB%E6%B1%82%E5%B8%AE%E5%8A%A9/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                管理用户
+                问问题
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

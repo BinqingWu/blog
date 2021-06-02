@@ -11,14 +11,14 @@
         <meta name="author" content="Lamei">
       
       
-        <link rel="canonical" href="https://github.com/SkrLamei/blog/AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/torch%E5%9F%BA%E7%A1%80/">
+        <link rel="canonical" href="https://github.com/SkrLamei/blog/torch%E7%BC%96%E7%A8%8B/topk/">
       
       <link rel="shortcut icon" href="../../images/favicon.jpg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.5">
     
     
       
-        <title>Torch基础 - Lamei's Blog</title>
+        <title>Top k - Lamei's Blog</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tensor" class="md-skip">
+        <a href="#top-k" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Torch基础
+              Top k
             
           </span>
         </div>
@@ -174,6 +174,22 @@
         
   
   
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Attention/" class="md-tabs__link">
+        AI基础知识
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
     
   
 
@@ -182,8 +198,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../Attention/" class="md-tabs__link md-tabs__link--active">
-        AI基础知识
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Torch编程
       </a>
     </li>
   
@@ -198,7 +214,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../%E4%BA%BA%E7%94%9F%E7%BB%8F%E9%AA%8C/%E8%AF%BB%E5%8D%9A/" class="md-tabs__link">
+      <a href="../../%E4%BA%BA%E7%94%9F%E7%BB%8F%E9%AA%8C/%E6%80%8E%E4%B9%88%E9%97%AE%E9%97%AE%E9%A2%98or%E5%AF%BB%E6%B1%82%E5%B8%AE%E5%8A%A9/" class="md-tabs__link">
         人生经验
       </a>
     </li>
@@ -289,14 +305,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
       
       <label class="md-nav__link" for="nav-2">
         AI基础知识
@@ -315,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Attention/" class="md-nav__link">
+      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Attention/" class="md-nav__link">
         Attention
       </a>
     </li>
@@ -327,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GNN/" class="md-nav__link">
+      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/GNN/" class="md-nav__link">
         图神经基础知识
       </a>
     </li>
@@ -339,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../NRI/" class="md-nav__link">
+      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/NRI/" class="md-nav__link">
         NRI
       </a>
     </li>
@@ -351,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../VAE/" class="md-nav__link">
+      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/VAE/" class="md-nav__link">
         VAE
       </a>
     </li>
@@ -361,62 +375,9 @@
             
   
   
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Torch基础
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Torch基础
-      </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tensor" class="md-nav__link">
-    Tensor
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    运算
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-          
-            
-  
-  
   
     <li class="md-nav__item">
-      <a href="../%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8CPCA/" class="md-nav__link">
+      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8CPCA/" class="md-nav__link">
         协方差与PCA
       </a>
     </li>
@@ -428,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         概率图相关
       </a>
     </li>
@@ -440,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E8%8C%83%E6%95%B0%E5%92%8C%E6%AD%A3%E5%88%99%E5%8C%96/" class="md-nav__link">
+      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E8%8C%83%E6%95%B0%E5%92%8C%E6%AD%A3%E5%88%99%E5%8C%96/" class="md-nav__link">
         范数与正则化
       </a>
     </li>
@@ -452,8 +413,75 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+      <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%9B%B8%E5%85%B3/" class="md-nav__link">
         贝叶斯相关
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      
+      <label class="md-nav__link" for="nav-3">
+        Torch编程
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Torch编程" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Torch编程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Top k
+      </a>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../torch%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        Torch基础
       </a>
     </li>
   
@@ -477,19 +505,31 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
       
-      <label class="md-nav__link" for="nav-3">
+      <label class="md-nav__link" for="nav-4">
         人生经验
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="人生经验" data-md-level="1">
-        <label class="md-nav__title" for="nav-3">
+        <label class="md-nav__title" for="nav-4">
           <span class="md-nav__icon md-icon"></span>
           人生经验
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%BA%BA%E7%94%9F%E7%BB%8F%E9%AA%8C/%E6%80%8E%E4%B9%88%E9%97%AE%E9%97%AE%E9%A2%98or%E5%AF%BB%E6%B1%82%E5%B8%AE%E5%8A%A9/" class="md-nav__link">
+        问问题
+      </a>
+    </li>
+  
+
           
             
   
@@ -521,14 +561,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
       
-      <label class="md-nav__link" for="nav-4">
+      <label class="md-nav__link" for="nav-5">
         服务器相关
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="服务器相关" data-md-level="1">
-        <label class="md-nav__title" for="nav-4">
+        <label class="md-nav__title" for="nav-5">
           <span class="md-nav__icon md-icon"></span>
           服务器相关
         </label>
@@ -640,28 +680,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tensor" class="md-nav__link">
-    Tensor
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    运算
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -674,23 +694,20 @@
               
   
                 
-                  <a href="https://github.com/SkrLamei/edit/master/docs/AI基础知识/torch基础.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/SkrLamei/edit/master/docs/torch编程/topk.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Torch基础</h1>
-                
-                <h2 id="tensor">Tensor<a class="headerlink" href="#tensor" title="Permanent link">&para;</a></h2>
-<ul>
-<li>permute</li>
-</ul>
-<h2 id="_1">运算<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>乘法</li>
-<li>torch.einsum</li>
-<li>torch.matmul</li>
-</ul>
+                <h1 id="top-k">Top k<a class="headerlink" href="#top-k" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="n">supports</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">topk</span><span class="p">,</span><span class="n">indices</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="n">supports</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">largest</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># topk 取前k个值</span>
+<span class="c1"># dim 0: 对列，dim 1：对行</span>
+<span class="n">zeros</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">supports</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">supports</span> <span class="o">=</span> <span class="n">zeros</span><span class="o">.</span><span class="n">scatter_</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">topk</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="c1"># scatter 散布</span>
+</code></pre></div>
                 
                   
                     
@@ -699,7 +716,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-05-17
+      Last update: 2021-05-28
     
   </small>
 </div>
@@ -717,7 +734,7 @@
 
   <h2 id="__comments">Comments</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://github.com/SkrLamei/blog/AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/torch%E5%9F%BA%E7%A1%80/",this.page.identifier="/AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/torch%E5%9F%BA%E7%A1%80/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//binqingwu.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+  <script>var disqus_config=function(){this.page.url="https://github.com/SkrLamei/blog/torch%E7%BC%96%E7%A8%8B/topk/",this.page.identifier="/torch%E7%BC%96%E7%A8%8B/topk/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//binqingwu.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
 
               
             </article>
@@ -731,7 +748,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../VAE/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../AI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%9B%B8%E5%85%B3/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -740,19 +757,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                VAE
+                贝叶斯相关
               </div>
             </div>
           </a>
         
         
-          <a href="../%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8CPCA/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../torch%E5%9F%BA%E7%A1%80/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                协方差与PCA
+                Torch基础
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
